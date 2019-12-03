@@ -1,0 +1,34 @@
+package com.demo.servlet;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
+public class LoginServlet extends HttpServlet{
+	public void doGet(HttpServletRequest req,HttpServletResponse res) throws IOException, ServletException
+	{
+		PrintWriter out=res.getWriter();
+		res.setContentType("text/html");
+		String nm=req.getParameter("name");
+		String pass=req.getParameter("pass");
+
+		boolean ans=es.employeeValidation(nm,pass);
+		if(ans)
+		{
+			RequestDispatcher rd= req.getRequestDispatcher("success.html");
+			rd.forward(req, res);
+		}
+		else
+		{
+			out.println("Please re-enter the credentials");
+			RequestDispatcher rd1= req.getRequestDispatcher("index.html");
+			rd1.include(req, res);
+		}
+	}
+}

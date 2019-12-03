@@ -1,0 +1,27 @@
+package com.demo.service;
+
+import com.demo.beans.MyEmployee;
+import com.demo.dao.EmployeeDao;
+import com.demo.dao.EmployeeDaoImpl;
+
+public class EmployeeServiceImpl implements EmployeeService{
+
+	private EmployeeDao edao=null;
+	public EmployeeServiceImpl()
+	{
+		
+		this.edao = new EmployeeDaoImpl();
+	}
+	public boolean employeeValidation(String nm, String pass) 
+	{
+		MyEmployee e= edao.Validate(nm, pass);
+		
+		if(e!=null &&  nm.equals(e.getName()) && pass.equals(e.getPass()))
+		{
+			return true;
+		}
+		
+		return false;
+	}
+
+}

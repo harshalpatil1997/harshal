@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>ServletLoginDemo</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  <servlet>
+  <servlet-name>Login</servlet-name>
+  <servlet-class>com.demo.servlet.LoginServlet</servlet-class>
+  
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>Login</servlet-name>
+  <url-pattern>/welcome</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  <servlet-name>Category</servlet-name>
+  <servlet-class>com.demo.servlet.CategoryServlet</servlet-class>
+   </servlet>
+  <servlet-mapping>
+  <servlet-name>Category</servlet-name>
+  <url-pattern>/category</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  <servlet-name>product</servlet-name>
+  <servlet-class>com.demo.servlet.ProductServlet</servlet-class>
+   </servlet>
+  <servlet-mapping>
+  <servlet-name>product</servlet-name>
+  <url-pattern>/product</url-pattern>
+  </servlet-mapping>
+  <servlet> 
+  <servlet-name>Save</servlet-name>
+  <servlet-class>com.demo.servlet.SaveCategoryServlet</servlet-class>
+   </servlet>
+  <servlet-mapping>
+  <servlet-name>Save</servlet-name>
+  <url-pattern>/save</url-pattern>
+  </servlet-mapping>
+  
+</web-app>

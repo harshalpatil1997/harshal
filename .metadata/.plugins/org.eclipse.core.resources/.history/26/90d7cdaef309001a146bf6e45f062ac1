@@ -1,0 +1,58 @@
+package com.demo.servlet;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.demo.beans.CategoryPOJO;
+import com.demo.service.CategoryService;
+import com.demo.service.CategoryServiceImpl;
+
+
+
+public class CategoryServlet extends HttpServlet {
+	
+
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		PrintWriter out=response.getWriter();
+		HttpSession session=request.getSession();
+		String nm=(String)request.getParameter("name");
+		CategoryService cs=new CategoryServiceImpl();
+		List<CategoryPOJO> clist=new ArrayList<>();
+		if(nm!=null)
+		{
+			out.println("Welcome Sheth "+nm);
+			clist=cs.getAllCategory();
+			out.println("<form action='product'>");
+			out.println("<select name='cat'>");
+			for(CategoryPOJO c:clist)
+			{
+				out.println("<option value='"+c.getCid()+"'>"+c.getCname()+"</option>");
+				
+			}
+			out.println("</select >");
+			out.println("<input type='submit' name='btn' value='Submit'>");
+			out.println("</form>");
+			
+			
+		}
+		else
+		{
+			out.println("Please re-enter the credentials");
+			RequestDispatcher rd1= request.getRequestDispatcher("index.html");
+			rd1.include(request, response);
+		}
+		
+	}
+
+}

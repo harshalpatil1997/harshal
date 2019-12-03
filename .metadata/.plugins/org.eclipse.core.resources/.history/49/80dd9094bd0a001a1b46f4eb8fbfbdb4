@@ -1,0 +1,20 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+   <%@ import="com.demo.service" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<%
+	String name=request.getParameter("name");
+	String pass=request.getParameter("pass");
+	LoginService ls=new LoginServiceImpl();
+	boolean ans=ls.loginValidation(name,pass);
+	
+%>
+
+</body>
+</html>

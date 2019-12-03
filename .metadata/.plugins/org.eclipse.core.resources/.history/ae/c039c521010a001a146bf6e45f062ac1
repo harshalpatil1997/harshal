@@ -1,0 +1,15 @@
+package com.demo.service;
+
+import java.util.List;
+
+import com.demo.beans.ProductPOJO;
+
+public class ProductServiceImpl implements ProductService {
+
+	ProductDao pdao=new ProductDaoImpl(int cid);
+	public List<ProductPOJO> getProducts() {
+		         
+		return pdao.getProduct(cid);
+	}
+
+}

@@ -1,0 +1,11 @@
+package com.demo.service;
+
+public class LoginServiceImpl implements LoginService {
+	LoginDao ldao=new LoginDaoImpl();
+	@Override
+	public boolean loginValidation(String nm, String pass) {
+	
+		return false;
+	}
+
+}

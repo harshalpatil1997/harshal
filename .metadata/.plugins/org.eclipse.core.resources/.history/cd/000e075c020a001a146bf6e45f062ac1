@@ -1,0 +1,32 @@
+package com.demo.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.List;
+
+import com.demo.beans.ProductPOJO;
+
+public class ProductDaoImpl implements ProductDao{
+
+	static PreparedStatement psel=null;
+	static Connection conn=null;
+	static
+	{
+		
+		try {
+			conn=MyConnection.getMyConnection();
+			csel=conn.prepareStatement("select * from product_pract where cid=?");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public List<ProductPOJO> getProduct(int cid) {
+		
+		return null;
+	}
+
+}

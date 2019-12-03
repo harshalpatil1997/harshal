@@ -1,0 +1,31 @@
+package com.demo.servlet;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.demo.service.ProductService;
+import com.demo.service.ProductServiceImpl;
+
+public class UpdateServlet extends HttpServlet{
+public void doGet(HttpServletRequest request,HttpServletResponse respons) throws IOException, ServletException {
+	PrintWriter out=respons.getWriter();
+	int pid=Integer.parseInt(request.getParameter("pid"));
+	int qty=Integer.parseInt(request.getParameter("pqty"));
+	int price=Integer.parseInt(request.getParameter("prc"));
+	ProductService ps=new ProductServiceImpl();
+	boolean ans=ps.updateProduct(pid,qty,price);
+	if(ans)
+	{
+		RequestDispatcher rd=request.getRequestDispatcher("product");
+		rd.forward(request, respons);
+	}
+
+
+}
+}

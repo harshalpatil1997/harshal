@@ -1,0 +1,6 @@
+package com.demo.beans;
+
+public class CategoryPOJO {
+int cid;
+String cname;
+}

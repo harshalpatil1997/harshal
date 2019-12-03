@@ -1,0 +1,15 @@
+127.0.0.1 - - [20/Nov/2019:14:12:45 +0530] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [20/Nov/2019:14:12:57 +0530] "GET /Product_practical/index.html HTTP/1.1" 200 305
+0:0:0:0:0:0:0:1 - - [20/Nov/2019:14:13:00 +0530] "GET /favicon.ico HTTP/1.1" 404 1085
+0:0:0:0:0:0:0:1 - - [20/Nov/2019:14:13:18 +0530] "GET /Product_practical/welcome?name=admin&pass=admin&btn=login HTTP/1.1" 500 2219
+127.0.0.1 - - [20/Nov/2019:14:33:34 +0530] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [20/Nov/2019:14:33:45 +0530] "GET /Product_practical/ HTTP/1.1" 200 305
+0:0:0:0:0:0:0:1 - - [20/Nov/2019:14:33:47 +0530] "GET /favicon.ico HTTP/1.1" 404 1085
+0:0:0:0:0:0:0:1 - - [20/Nov/2019:14:34:01 +0530] "GET /Product_practical/welcome?name=admin&pass=123&btn=login HTTP/1.1" 200 232
+0:0:0:0:0:0:0:1 - - [20/Nov/2019:14:34:04 +0530] "GET /Product_practical/save?cat=1&btn=Submit HTTP/1.1" 200 666
+0:0:0:0:0:0:0:1 - - [20/Nov/2019:14:34:08 +0530] "GET /Product_practical/buy HTTP/1.1" 404 1099
+0:0:0:0:0:0:0:1 - - [20/Nov/2019:14:37:46 +0530] "GET /Product_practical/buy HTTP/1.1" 404 1099
+127.0.0.1 - - [20/Nov/2019:14:48:31 +0530] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [20/Nov/2019:14:48:33 +0530] "GET /JSPDemo/ HTTP/1.1" 200 353
+0:0:0:0:0:0:0:1 - - [20/Nov/2019:14:48:47 +0530] "GET /JSPDemo/login?name=admin&pass=admin&btn=login HTTP/1.1" 200 25
+0:0:0:0:0:0:0:1 - - [20/Nov/2019:14:50:28 +0530] "GET /JSPDemo/forgot.jsp HTTP/1.1" 500 2651

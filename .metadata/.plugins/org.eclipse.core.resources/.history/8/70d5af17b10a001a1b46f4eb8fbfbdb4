@@ -1,0 +1,60 @@
+package com.demo.servlet;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.demo.beans.ProductPOJO;
+import com.demo.service.ProductService;
+import com.demo.service.ProductServiceImpl;
+
+public class EditServlet extends HttpServlet
+{
+	public void doGet(HttpServletRequest request,HttpServletResponse response)
+	{
+		try {
+			PrintWriter out=response.getWriter();
+			int pid=Integer.parseInt(request.getParameter("pid"));
+			ProductService ps=new ProductServiceImpl();
+			ProductPOJO p=ps.getProductById(pid);
+			if(p!=null)
+			{
+				out.println("<body bgcolor='cyan'>");
+				out.println("<form actio='update'>");
+				out.println("<table>");
+				out.println("<th><input type='hidden' name='pid' value='"+p.getPid()+"'></th>");
+				out.println("<th><input type='text' name='pname' value='"+p.getPname()+"' readonly></th>");
+				out.println("<th><input type='text' name='pqty' value='"+p.getQuant()+"'></th>");
+				out.println("<th><input type='hidden' name='prc' value='"+p.getPrice()+"'></th>");
+				out.println("</body>");
+			}
+			else
+			{
+				out.println("<h1>record not found</h1>")
+			}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+
+}

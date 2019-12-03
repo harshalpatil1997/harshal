@@ -1,0 +1,15 @@
+package com.demo.dao;
+
+import java.util.List;
+
+import com.demo.beans.ProductPOJO;
+
+public class ProductDaoImpl implements ProductDao{
+
+	@Override
+	public List<ProductPOJO> getProduct(int cid) {
+		
+		return null;
+	}
+
+}

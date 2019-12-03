@@ -1,0 +1,14 @@
+package com.demo.service;
+
+import com.demo.dao.LoginDao;
+import com.demo.dao.LoginDaoImpl;
+
+public class LoginServiceImpl implements LoginService {
+	LoginDao ldao=new LoginDaoImpl();
+	@Override
+	public boolean loginValidation(String nm, String pass) {
+	
+		return ldao.checkLogin(nm,pass);
+	}
+
+}
